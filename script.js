@@ -95,34 +95,49 @@ document.querySelector('h1').innerText = "hello world"
 
 // console.log(minMax([1,2,3,4,5]))
 
-//  Challenge, simple calculator
+// //  Challenge, simple calculator
 
-let num1 = prompt("First Number")
-let expression = prompt("add, subtract, multiply, or divide")
-let num2 = prompt("second number")
+// let num1 = prompt("First Number")
+// let expression = prompt("add, subtract, multiply, or divide")
+// let num2 = prompt("second number")
 
-let answer = 0;
-let mynum1 = Number(num1)
-let mynum2 = Number(num2)
+// let answer = 0;
+// let mynum1 = Number(num1)
+// let mynum2 = Number(num2)
 
 
 
-switch (expression) {
-    case "+" :
-        answer = mynum1 + mynum2;
-        break;
-    case "-" :
-        answer = mynum1 - mynum2;
-        break;
-    case "*" :
-        answer = mynum1 * mynum2;
-        break;
-    case "/" :
-        answer = mynum1 / mynum2;
-        break;
-    default: 
-        alert("error");    
+// switch (expression) {
+//     case "+" :
+//         answer = mynum1 + mynum2;
+//         break;
+//     case "-" :
+//         answer = mynum1 - mynum2;
+//         break;
+//     case "*" :
+//         answer = mynum1 * mynum2;
+//         break;
+//     case "/" :
+//         answer = mynum1 / mynum2;
+//         break;
+//     default: 
+//         alert("error");    
+// }
+
+
+// alert(`${num1} ${expression} ${num2} = ${answer}`)
+
+// FizzBuzz
+
+for (let i = 1; i <101; i++) {
+    if(i % 3 === 0 && i % 5 === 0){
+        console.log("FizzBuzz");
+    } else if ( i % 3 === 0){
+        console.log("Fizz");
+    } else if (i % 5 === 0){
+        console.log("Buzz");
+    } else {
+        console.log(i)
+    }
+
 }
-
-
-alert(`${num1} ${expression} ${num2} = ${answer}`)
