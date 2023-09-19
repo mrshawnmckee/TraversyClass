@@ -81,16 +81,48 @@ document.querySelector('h1').innerText = "hello world"
 
 // alert(`The temperature is ${conversion(fDegrees)} \xB0C`)
 
-// Challenge two: Min/max; create function that takes in an array and returns an object with the min and max numbers without looops
+// // Challenge two: Min/max; create function that takes in an array and returns an object with the min and max numbers without looops
 
-function minMax(arr) {
-    const min = Math.min(...arr)
-    const max = Math.max(...arr)
+// function minMax(arr) {
+//     const min = Math.min(...arr)
+//     const max = Math.max(...arr)
 
-    return {
-        min: min,
-        max:max
-    }
+//     return {
+//         min: min,
+//         max:max
+//     }
+// }
+
+// console.log(minMax([1,2,3,4,5]))
+
+//  Challenge, simple calculator
+
+let num1 = prompt("First Number")
+let expression = prompt("add, subtract, multiply, or divide")
+let num2 = prompt("second number")
+
+let answer = 0;
+let mynum1 = Number(num1)
+let mynum2 = Number(num2)
+
+
+
+switch (expression) {
+    case "+" :
+        answer = mynum1 + mynum2;
+        break;
+    case "-" :
+        answer = mynum1 - mynum2;
+        break;
+    case "*" :
+        answer = mynum1 * mynum2;
+        break;
+    case "/" :
+        answer = mynum1 / mynum2;
+        break;
+    default: 
+        alert("error");    
 }
 
-console.log(minMax([1,2,3,4,5]))
+
+alert(`${num1} ${expression} ${num2} = ${answer}`)
