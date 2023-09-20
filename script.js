@@ -127,17 +127,93 @@ document.querySelector('h1').innerText = "hello world"
 
 // alert(`${num1} ${expression} ${num2} = ${answer}`)
 
-// FizzBuzz
+// 
 
-for (let i = 1; i <101; i++) {
-    if(i % 3 === 0 && i % 5 === 0){
-        console.log("FizzBuzz");
-    } else if ( i % 3 === 0){
-        console.log("Fizz");
-    } else if (i % 5 === 0){
-        console.log("Buzz");
-    } else {
-        console.log(i)
-    }
+// const numbers = [1,2,3,4,5];
 
-}
+// const numGreaterTHan3 = numbers.filter(num => num > 3);
+// console.log(numGreaterTHan3);
+// const doubledNumbers = numbers.map((num) => num * 2);
+// console.log(doubledNumbers)
+
+
+// //Using reduce like in a shopping cart to find the total
+
+// const cart = [
+//     {id:1, name: 'Product1', price: 130 },
+//     {id:2, name: 'Product2', price: 150 },
+//     {id:3, name: 'Product3', price: 175 },
+// ]
+
+// const total = cart.reduce((acc, cur) => acc + cur.price, 0)
+// console.log(total)
+
+
+// Array method Challenge 1, create an array called young people and store only name and email of people 25 and under
+const people = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+      email: 'john@gmail.com',
+      phone: '111-111-1111',
+      age: 30,
+    },
+    {
+      firstName: 'Jane',
+      lastName: 'Poe',
+      email: 'jane@gmail.com',
+      phone: '222-222-2222',
+      age: 25,
+    },
+    {
+      firstName: 'Bob',
+      lastName: 'Foe',
+      email: 'bob@gmail.com',
+      phone: '333-333-3333',
+      age: 45,
+    },
+    {
+      firstName: 'Sara',
+      lastName: 'Soe',
+      email: 'Sara@gmail.com',
+      phone: '444-444-4444',
+      age: 19,
+    },
+    {
+      firstName: 'Jose',
+      lastName: 'Koe',
+      email: 'jose@gmail.com',
+      phone: '555-555-5555',
+      age: 23,
+    },
+  ];
+
+//   remember, in the object key:value and extra parenthesis
+const youngPeople = people
+    .filter((person) => person.age <= 25)
+    .map((person) => ({
+        name: person.firstName + ' ' + person.lastName,
+        email: person.email,
+}))
+
+
+console.log(youngPeople)
+
+
+// Array Method challenge 2; add all og the posisitve numbers in the array with array methods
+const numbers = [2, -30, 50, 20, -12, -9, 7];
+
+const positiveSum = numbers
+    .filter((num) => num > 0)
+    .reduce((acc, cur) => acc + cur, 0)
+
+console.log(positiveSum)
+
+// Array Challenge 3; create a new array called Capitalized words that has the first letter of each word capitalized
+
+const words = ['coder', 'programmer', 'developer'];
+
+const capitalizedWords = words.map( word => word[0].toUpperCase() + word.slice(1))
+
+
+console.log(capitalizedWords)
