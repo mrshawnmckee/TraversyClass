@@ -104,3 +104,23 @@ function replaceAllItems() {
 }
 
 replaceAllItems()
+
+// remove elements (example, delete form a list) == .remove()
+
+//AddEventListener
+const clickMe = document.querySelector('.clickMe')
+
+
+
+// clickMe.addEventListener("click", () => {
+//     // alert("You clicked me")
+//     // clickMe.innerText ="I was clicked"
+// })
+
+
+function changeButton(){
+    alert("You clicked me")
+    clickMe.innerText ="I was clicked"
+}
+// you can also pass in functions, but dont call the function or it will run at page load
+clickMe.addEventListener('click', changeButton)
