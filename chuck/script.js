@@ -21,3 +21,5 @@ const generateJoke = () => {
 
 
 jokeBtn.addEventListener('click', generateJoke);
+// If you want the page to open with a prepopulated joke instead of the loading word: 
+document.addEventListener('DOMContentLoaded', generateJoke)
