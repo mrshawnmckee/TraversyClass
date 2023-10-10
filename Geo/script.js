@@ -1,41 +1,3 @@
-// // Set interval, change colors
-
-
-// let intervalID;
-
-// function startChange() {
-//     if(!intervalID) {
-//         intervalID = setInterval(changeRandomColor, 1000)
-//     }
-// }
-
-// // // This will toggle between black and white
-// // function changeColor(){
-// //     if (document.body.style.backgroundColor !== "black") {
-// //         document.body.style.backgroundColor = "black"
-// //         document.body.style.color = "white"
-// //     } else {
-// //         document.body.style.backgroundColor = "white"
-// //         document.body.style.color = "black"
-// //     }
-// // }
-
-// // This will bring a random color
-
-// function changeRandomColor() {
-//     const randomColor = Math.floor(Math.random() * 16777215).toString(16)
-//     document.body.style.backgroundColor = `#${randomColor}`
-// }
-
-// function stopChange() {
-//     clearInterval(intervalID);
-// }
-
-// document.getElementById('stop').addEventListener('click', stopChange)
-// document.getElementById('start').addEventListener('click', startChange)
-
-
-
 //Geolocation//
 
 
@@ -97,13 +59,13 @@
 
 //  Here is the copied map JS from leaflet.com, changed var map to const at the beginning
  
- const map = L.map('map').setView([51.505, -0.09], 13);  //([Lat, long], zoom)
+const map = L.map('map').setView([51.505, -0.09], 13);  //([Lat, long], zoom)
 
- L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
- }).addTo(map);
- 
-//  This was from the site, using my own marker
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+//  This was from the site, I am instead using my own marker function
 //  L.marker([51.5, -0.09]).addTo(map)
 //      .bindPopup('A pretty CSS popup.<br> Easily customizable.')
 //      .openPopup();
@@ -112,14 +74,12 @@
 const marker = L.marker([0,0]).addTo(map);
 
 navigator.geolocation.getCurrentPosition(function(pos) {
-    const lat = pos.coords.latitude;
-    const lng = pos.coords.longitude;
+   const lat = pos.coords.latitude;
+   const lng = pos.coords.longitude;
 
-    marker.setLatLng([lat, lng]).update;  //this sets the current location to the marker
-    map.setView([lat, lng], 13);    //The higher the third number, the more zoomed in it is
+   marker.setLatLng([lat, lng]).update;  //this sets the current location to the marker
+   map.setView([lat, lng], 13);    //The higher the third number, the more zoomed in it is
+
+   marker.bindPopup(`Your cuurent location is approximately ${lat} latitude, ${lng} longitude`)//If you clisk on the marker, this will popup
 
 })
-
-
-
-

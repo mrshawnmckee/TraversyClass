@@ -2,6 +2,7 @@ function fetchUser() {
   showSpinner();
   fetch('https://randomuser.me/api')
    .then((res) => res.json())
+   
    .then((data) => {
     hideSpinner();
       displayUser(data.results[0]);
